@@ -84,8 +84,8 @@ namespace TicketSystemApi.Persistance.Services
                 var converter = new HtmlConverter();
                 var bytes = converter.FromHtmlString(IMageTextFormat.ImageGenerator(ticket,ticketnumber));
                 _environment.WebRootPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
-                File.WriteAllBytes(_environment.WebRootPath + "/Tickets/"+ ticketnumber + ".jpeg", bytes);
-                return _environment.WebRootPath + "/Tickets/" + ticketnumber + ".jpeg";
+                File.WriteAllBytes(_environment.WebRootPath + "\\Tickets\\"+ ticketnumber + ".jpeg", bytes);
+                return _environment.WebRootPath + "\\Tickets\\" + ticketnumber + ".jpeg";
             }
             catch (Exception ex)
             {

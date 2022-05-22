@@ -154,6 +154,11 @@ namespace TicketSystemApi.Persistance.Services
         public bool isexistTicket(string userid)
         {
             var result = _baseRepositry.getTicket(userid);
+            if (result == null)
+            {
+                return true;
+            }
+            result = _baseRepositry.GetTByMobileNumber(result.PhoneNumber);
             return (result.ticket == null) ? true : false;
         }
     }

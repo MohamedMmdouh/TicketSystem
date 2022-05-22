@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -39,7 +40,7 @@ namespace TicketSystemApi.Persistance.Services
 
         public User GetTByMobileNumber(string mobilenumber)
         {
-            return _context.User.Where(x=>x.PhoneNumber==mobilenumber).FirstOrDefault();
+            return _context.User.Where(x=>x.PhoneNumber==mobilenumber).Include(x=>x.ticket).FirstOrDefault();
         }
 
         public T getlastTicketnumber(Expression<Func<T, object>> predicate)
