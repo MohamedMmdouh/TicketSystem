@@ -20,7 +20,7 @@ namespace TicketSystemApi.Models.DataSeeding
             var user = new User
             {
                 UserName = "admin",
-                NormalizedUserName = "email@email.com",
+                NormalizedUserName = "admin",
                 Email = "Email@email.com",
                 NormalizedEmail = "email@email.com",
                 PhoneNumber = "01000000000",
@@ -53,9 +53,9 @@ namespace TicketSystemApi.Models.DataSeeding
                     user = new User
                     {
                         UserName = $"User{i}",
-                        NormalizedUserName = $"email{i}@email.com",
-                        Email = "Email@email.com",
-                        NormalizedEmail = "email@email.com",
+                        NormalizedUserName = $"User{i}",
+                        Email = $"Email{i}@email.com",
+                        NormalizedEmail = $"email{i}@email.com",
                         PhoneNumber = $"0100000000{i}",
                         EmailConfirmed = true,
                         LockoutEnabled = false,
